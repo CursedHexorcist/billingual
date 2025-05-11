@@ -6,9 +6,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
+        'react',
+        'react-dom',
         'react/jsx-runtime',
-        'react-dom/server',
-        // tambahkan modul lain jika error build menyebutnya
+        'styled-components',
+        '@emotion/react',
+        '@emotion/styled',
+        'aos',
+        'swiper',  // jika ada error terkait dengan modul lainnya
+        'react-slick',  // misalnya jika react-slick digunakan
       ],
     },
   },
