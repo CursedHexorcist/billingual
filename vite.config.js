@@ -10,7 +10,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       onwarn(warning, warn) {
-        // Abaikan warning 'this is likely unintended external'
+        // Abaikan warning tertentu yang tidak fatal
         if (
           warning.message &&
           warning.message.includes('This is most likely unintended because it can break your application')
@@ -19,22 +19,7 @@ export default defineConfig({
         }
         warn(warning)
       },
-      external: [], // kosongkan dulu, jangan pakai external sembarangan
+      external: [] // Kosongkan dulu, nanti isi jika sudah tahu modul spesifik
     }
   }
-  build: {
-  rollupOptions: {
-    onwarn(warning, warn) {
-      if (
-        warning.message &&
-        warning.message.includes('This is most likely unintended because it can break your application')
-      ) {
-        return // abaikan warning ini
-      }
-      warn(warning)
-    }
-  }
-}
-
 })
-
