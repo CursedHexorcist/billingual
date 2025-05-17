@@ -1,7 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -15,8 +14,8 @@ export default defineConfig({
         '@emotion/styled',
         'swiper',
         'react-slick',
-        // Tambahkan modul-modul lain yang mungkin menyebabkan masalah
+        // Tambahkan modul lain yang kamu perlu eksternalkan di sini
       ],
     },
   },
-})
+});
