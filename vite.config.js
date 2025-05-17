@@ -9,12 +9,13 @@ export default defineConfig({
         'react',
         'react-dom',
         'react/jsx-runtime',
-        'styled-components',
+        '@heroicons/react',
         '@emotion/react',
         '@emotion/styled',
+        'styled-components',
         'swiper',
         'react-slick',
-        // Tambahkan modul lain yang kamu perlu eksternalkan di sini
+        // Tambahkan di sini sesuai modul error
       ],
     },
   },
