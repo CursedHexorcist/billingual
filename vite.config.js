@@ -5,12 +5,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // Jika kamu perlu alias khusus, tambahkan di sini, misal:
-      // 'react-swipeable-views': 'react-swipeable-views', 
-      // Tapi biasanya ini nggak perlu kecuali kamu pakai custom path.
+      // alias kalau perlu
     },
   },
   build: {
     chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      external: ['react', 'react-dom']  // tandai react dan react-dom sebagai external
+    }
   },
 })
