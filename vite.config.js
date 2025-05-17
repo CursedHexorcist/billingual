@@ -22,5 +22,19 @@ export default defineConfig({
       external: [], // kosongkan dulu, jangan pakai external sembarangan
     }
   }
+  build: {
+  rollupOptions: {
+    onwarn(warning, warn) {
+      if (
+        warning.message &&
+        warning.message.includes('This is most likely unintended because it can break your application')
+      ) {
+        return // abaikan warning ini
+      }
+      warn(warning)
+    }
+  }
+}
+
 })
 
